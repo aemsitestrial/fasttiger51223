@@ -1,5 +1,6 @@
 export default function decorate(block) {
   const rows = [...block.children];
+
   const getText = (index) => rows[index]?.textContent?.trim() || '';
 
   const category = getText(0);
@@ -13,27 +14,22 @@ export default function decorate(block) {
   const author = getText(8);
   const designation = getText(9);
 
-  block.innerHTML = `
+  const html = `
     <div class="hero-banner-2__container">
       <div class="hero-banner-2__meta">
         ${category ? <span class="hero-banner-2__tag">${category}</span> : ''}
         ${topic ? <span>${topic}</span> : ''}
         ${readTime ? <span>${readTime}</span> : ''}
       </div>
-
       ${publishDate ? <div class="hero-banner-2__date">${publishDate}</div> : ''}
-
       <h2 class="hero-banner-2__title">${title}</h2>
-
       <p class="hero-banner-2__description">${description}</p>
-
       ${ctaText ? `
         <a href="${ctaLink}" class="hero-banner-2__cta">
           ${ctaText}
           <span class="hero-banner-2__arrow">&rarr;</span>
         </a>
       ` : ''}
-
       ${author || designation ? `
         <div class="hero-banner-2__author">
           ${author ? <div class="hero-banner-2__author-name">${author}</div> : ''}
@@ -42,4 +38,6 @@ export default function decorate(block) {
       ` : ''}
     </div>
   `;
+
+  block.innerHTML = html;
 }
