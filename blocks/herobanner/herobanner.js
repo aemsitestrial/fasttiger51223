@@ -1,8 +1,7 @@
 export default function decorate(block) {
   const rows = [...block.children];
 
-  const getText = (index) =>
-    rows[index]?.textContent?.trim() || '';
+  const getText = (index) => rows[index]?.textContent?.trim() || '';
 
   const category = getText(0);
   const topic = getText(1);
@@ -17,7 +16,6 @@ export default function decorate(block) {
 
   block.innerHTML = `
     <div class="hero-banner-2__container">
-
       <div class="hero-banner-2__meta">
         <span class="hero-banner-2__tag">${category}</span>
         <span>${topic}</span>
@@ -49,8 +47,6 @@ export default function decorate(block) {
           ${designation}
         </div>
       </div>
-
     </div>
   `;
 }
-``
