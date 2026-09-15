@@ -16,19 +16,19 @@ export default function decorate(block) {
   block.innerHTML = `
     <div class="hero-banner-2__container">
       <div class="hero-banner-2__meta">
-        ${category ? `<span class="hero-banner-2__tag">${category}</span>` : ''}
-        ${topic ? `<span>${topic}</span>` : ''}
-        ${readTime ? `<span>${readTime}</span>` : ''}
+        ${category ? <span class="hero-banner-2__tag">${category}</span> : ''}
+        ${topic ? <span>${topic}</span> : ''}
+        ${readTime ? <span>${readTime}</span> : ''}
       </div>
 
-      ${publishDate ? `<div class="hero-banner-2__date">${publishDate}</div>` : ''}
+      ${publishDate ? <div class="hero-banner-2__date">${publishDate}</div> : ''}
 
       <h2 class="hero-banner-2__title">${title}</h2>
 
       <p class="hero-banner-2__description">${description}</p>
 
       ${ctaText ? `
-        ${ctaLink}
+        <a href="${ctaLink}" class="hero-banner-2__cta">
           ${ctaText}
           <span class="hero-banner-2__arrow">&rarr;</span>
         </a>
@@ -36,8 +36,8 @@ export default function decorate(block) {
 
       ${author || designation ? `
         <div class="hero-banner-2__author">
-          ${author ? `<div class="hero-banner-2__author-name">${author}</div>` : ''}
-          ${designation ? `<div class="hero-banner-2__author-role">${designation}</div>` : ''}
+          ${author ? <div class="hero-banner-2__author-name">${author}</div> : ''}
+          ${designation ? <div class="hero-banner-2__author-role">${designation}</div> : ''}
         </div>
       ` : ''}
     </div>
