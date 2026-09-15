@@ -28,7 +28,7 @@ export default function decorate(block) {
       <p class="hero-banner-2__description">${description}</p>
 
       ${ctaText ? `
-        <actaLink}
+        <a href="${ctaLink}" class="hero-banner-2__cta">
           ${ctaText}
           <span class="hero-banner-2__arrow">→</span>
         </a>
