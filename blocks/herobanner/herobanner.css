@@ -1,4 +1,5 @@
-.block.hero-banner-2 {
+.block.herobanner,
+.block.hero-banner {
   position: relative;
   min-height: 620px;
   color: #fff;
@@ -13,10 +14,10 @@
   min-height: 620px;
   background: linear-gradient(
     90deg,
-    rgba(0, 67, 63, 0.96) 0%,
-    rgba(0, 67, 63, 0.84) 38%,
-    rgba(0, 67, 63, 0.38) 68%,
-    rgba(0, 67, 63, 0.08) 100%
+    rgb(0 67 63 / 96%) 0%,
+    rgb(0 67 63 / 84%) 38%,
+    rgb(0 67 63 / 38%) 68%,
+    rgb(0 67 63 / 8%) 100%
   );
 }
 
@@ -36,6 +37,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+/* Description */
+.hero-banner-2__content > p {
+  max-width: 560px;
+  font-size: 22px;
+  line-height: 1.5;
 }
 
 /* Category */
@@ -78,13 +86,6 @@
   font-weight: 300;
   line-height: 1.05;
   letter-spacing: -0.02em;
-}
-
-/* Description */
-.hero-banner-2__content > p {
-  max-width: 560px;
-  font-size: 22px;
-  line-height: 1.5;
 }
 
 /* CTA */
@@ -135,7 +136,8 @@
 }
 
 @media (max-width: 768px) {
-  .block.hero-banner-2,
+  .block.herobanner,
+  .block.hero-banner,
   .hero-banner-2__overlay,
   .hero-banner-2__container {
     min-height: 550px;
@@ -148,9 +150,9 @@
   .hero-banner-2__overlay {
     background: linear-gradient(
       90deg,
-      rgba(0, 67, 63, 0.95) 0%,
-      rgba(0, 67, 63, 0.78) 70%,
-      rgba(0, 67, 63, 0.45) 100%
+      rgb(0 67 63 / 95%) 0%,
+      rgb(0 67 63 / 78%) 70%,
+      rgb(0 67 63 / 45%) 100%
     );
   }
 
