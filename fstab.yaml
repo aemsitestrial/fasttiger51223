@@ -1,6 +1,6 @@
 mountpoints:
   /:
-    url: "https://author-p153710-e1614654.adobeaemcloud.com/bin/franklin.delivery/aemsitestrial/aem-boilerplate-xcom/main"
+    url: "https://author-p153710-e1614654.adobeaemcloud.com/bin/franklin.delivery/aemsitestrial/fasttiger51223/main"
     type: "markup"
     suffix: ".html"
   
