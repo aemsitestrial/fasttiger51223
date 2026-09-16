@@ -398,85 +398,22 @@
         "component": "reference",
         "valueType": "string",
         "name": "image",
-        "label": "Background Image",
+        "label": "Image",
         "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
-        "label": "Image Alt Text",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "tag",
-        "label": "Tag",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "category",
-        "label": "Category",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "readTime",
-        "label": "Read Time",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "publishDate",
-        "label": "Publish Date",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title",
+        "label": "Alt",
         "value": ""
       },
       {
         "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "ctaText",
-        "label": "CTA Text",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "ctaLink",
-        "label": "CTA Link",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "author",
-        "label": "Author",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "designation",
-        "label": "Designation",
-        "value": ""
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
       }
     ]
   },
