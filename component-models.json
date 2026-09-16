@@ -395,64 +395,25 @@
     "id": "herobanner",
     "fields": [
       {
-        "component": "text",
+        "component": "reference",
         "valueType": "string",
-        "name": "category",
-        "label": "Category"
+        "name": "image",
+        "label": "Image",
+        "multi": false
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "topic",
-        "label": "Topic"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "readTime",
-        "label": "Read time"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "publishDate",
-        "label": "Publish date"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "label": "Title"
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
       },
       {
         "component": "richtext",
-        "valueType": "string",
-        "name": "description",
-        "label": "Description"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "ctaText",
-        "label": "CTA text"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "ctaLink",
-        "label": "CTA link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "author",
-        "label": "Author"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "designation",
-        "label": "Designation"
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
       }
     ]
   },
