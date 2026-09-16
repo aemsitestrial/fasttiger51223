@@ -1,121 +1,174 @@
 .block.hero-banner-2 {
-  background: #00433f;
+  position: relative;
+  min-height: 620px;
   color: #fff;
+  background-color: #00433f;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.hero-banner-2__overlay {
+  min-height: 620px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 67, 63, 0.96) 0%,
+    rgba(0, 67, 63, 0.84) 38%,
+    rgba(0, 67, 63, 0.38) 68%,
+    rgba(0, 67, 63, 0.08) 100%
+  );
 }
 
 .hero-banner-2__container {
   max-width: 1440px;
   min-height: 620px;
+  margin: 0 auto;
   padding: 56px 72px;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }
 
-.hero-banner-2__meta {
+.hero-banner-2__content {
+  max-width: 620px;
+  height: 100%;
   display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 28px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Category */
+.hero-banner-2__content > p:first-child {
+  display: inline-block;
+  margin: 0 0 28px;
+  padding: 6px 12px;
+  border-radius: 2px;
+  background: #dde7e8;
+  color: #00433f;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 700;
+  line-height: 1.2;
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
 
-.hero-banner-2__tag {
-  background: #dde7e8;
-  color: #00433f;
-  padding: 6px 12px;
-  border-radius: 2px;
-  font-weight: 700;
-}
-
-.hero-banner-2__date {
+/* Topic / metadata */
+.hero-banner-2__content > p:nth-child(2) {
+  margin: 0 0 18px;
   font-size: 26px;
   font-weight: 300;
-  margin-bottom: 18px;
+  line-height: 1.2;
 }
 
-.hero-banner-2__title {
+/* Date */
+.hero-banner-2__content > p:nth-child(3) {
+  margin: 0 0 18px;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+/* Main title */
+.hero-banner-2__content h1,
+.hero-banner-2__content h2 {
   max-width: 560px;
+  margin: 0 0 32px;
   font-size: 74px;
   font-weight: 300;
   line-height: 1.05;
-  margin: 0 0 32px;
+  letter-spacing: -0.02em;
 }
 
-.hero-banner-2__description {
+/* Description */
+.hero-banner-2__content > p {
   max-width: 560px;
   font-size: 22px;
   line-height: 1.5;
-  margin-bottom: 36px;
 }
 
-.hero-banner-2__cta {
+/* CTA */
+.hero-banner-2__content a {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  width: fit-content;
+  margin-top: 8px;
+  margin-bottom: 50px;
   color: #fff;
-  text-decoration: none;
   font-size: 16px;
   font-weight: 500;
-  margin-bottom: 50px;
-  width: fit-content;
+  line-height: 1.4;
+  text-decoration: none;
 }
 
-.hero-banner-2__cta:hover {
+.hero-banner-2__content a::after {
+  content: "→";
+  font-size: 20px;
+  transition: transform 0.2s ease;
+}
+
+.hero-banner-2__content a:hover::after,
+.hero-banner-2__content a:focus-visible::after {
+  transform: translateX(4px);
+}
+
+.hero-banner-2__content a:hover {
   opacity: 0.85;
 }
 
-.hero-banner-2__arrow {
-  font-size: 20px;
-}
-
-.hero-banner-2__author {
+/* Author */
+.hero-banner-2__content .author {
   margin-top: auto;
 }
 
-.hero-banner-2__author-name {
-  font-size: 16px;
-  margin-bottom: 6px;
-}
-
-.hero-banner-2__author-role {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  opacity: 0.8;
-}
-
+/* Mobile */
 @media (max-width: 1024px) {
-  .hero-banner-2__title {
+  .hero-banner-2__content h1,
+  .hero-banner-2__content h2 {
     font-size: 56px;
   }
 
-  .hero-banner-2__description {
-    font-size: 20px;
+  .hero-banner-2__content {
+    max-width: 580px;
   }
 }
 
 @media (max-width: 768px) {
+  .block.hero-banner-2,
+  .hero-banner-2__overlay,
+  .hero-banner-2__container {
+    min-height: 550px;
+  }
+
   .hero-banner-2__container {
     padding: 32px 24px;
   }
 
-  .hero-banner-2__meta {
-    flex-wrap: wrap;
-    gap: 12px;
+  .hero-banner-2__overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 67, 63, 0.95) 0%,
+      rgba(0, 67, 63, 0.78) 70%,
+      rgba(0, 67, 63, 0.45) 100%
+    );
   }
 
-  .hero-banner-2__title {
+  .hero-banner-2__content h1,
+  .hero-banner-2__content h2 {
     font-size: 42px;
   }
 
-  .hero-banner-2__description {
+  .hero-banner-2__content > p:nth-child(2),
+  .hero-banner-2__content > p:nth-child(3) {
     font-size: 18px;
   }
 
-  .hero-banner-2__date {
-    font-size: 18px;
+  .hero-banner-2__content {
+    max-width: 100%;
+  }
+
+  .hero-banner-2__content a {
+    margin-bottom: 32px;
   }
 }
