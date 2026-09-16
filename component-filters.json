@@ -87,7 +87,8 @@
       "cards",
       "columns",
       "fragment",
-      "commerce-mini-cart"
+      "commerce-mini-cart",
+      "herobanner"
     ]
   },
   {
@@ -103,7 +104,8 @@
       "fragment",
       "commerce-cart",
       "product-teaser",
-      "product-recommendations"
+      "product-recommendations",
+      "herobanner"
     ]
   },
   {
@@ -114,6 +116,7 @@
       "button",
       "title",
       "hero",
+      "herobanner",
       "cards",
       "columns",
       "fragment",
@@ -137,6 +140,7 @@
       "button",
       "title",
       "hero",
+      "herobanner",
       "cards",
       "columns",
       "fragment",
@@ -151,6 +155,7 @@
       "button",
       "title",
       "hero",
+      "herobanner",
       "cards",
       "columns",
       "fragment",
@@ -165,6 +170,7 @@
       "button",
       "title",
       "hero",
+      "herobanner",
       "cards",
       "columns",
       "fragment",
