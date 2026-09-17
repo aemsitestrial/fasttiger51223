@@ -36,8 +36,8 @@
 
 .herobanner__background {
   position: absolute;
-  z-index: -1;
   inset: 0;
+  z-index: 0;
   overflow: hidden;
 }
 
@@ -59,14 +59,14 @@
 }
 
 .herobanner__content {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   width: min(40%, 650px);
   margin-left: clamp(48px, 8vw, 144px);
   padding: 64px 0 56px;
-  position: relative;
-  z-index: 2;
 }
 
 .herobanner__meta {
@@ -81,7 +81,7 @@
   padding: 7px 12px;
   border: 1px solid rgb(255 255 255 / 30%);
   border-radius: 2px;
-  background: rgba(4, 0, 255, 0.08)
+  background: rgb(255 255 255 / 8%);
 }
 
 .herobanner__label,
