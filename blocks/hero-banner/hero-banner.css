@@ -41,13 +41,6 @@
   overflow: hidden;
 }
 
-.herobanner__background::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(247, 243, 243, 0.45);
-}
-
 .herobanner__background-image,
 .herobanner__background-image img {
   width: 100%;
@@ -72,6 +65,8 @@
   width: min(40%, 650px);
   margin-left: clamp(48px, 8vw, 144px);
   padding: 64px 0 56px;
+  position: relative;
+  z-index: 2;
 }
 
 .herobanner__meta {
