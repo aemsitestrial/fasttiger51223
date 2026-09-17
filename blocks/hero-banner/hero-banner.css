@@ -1,13 +1,12 @@
 .herobanner {
-
-
+  --hero-fallback: #111318;
   --hero-white: #fff;
   --hero-muted: rgb(255 255 255 / 72%);
   --hero-subtle: rgb(255 255 255 / 52%);
 
   width: 100%;
   color: var(--hero-white);
-
+  background: var(--hero-fallback);
 }
 
 .herobanner a {
@@ -32,7 +31,7 @@
   width: 100%;
   height: clamp(850px, 56.25vw, 950px);
   overflow: hidden;
- 
+  background: var(--hero-fallback);
 }
 
 .herobanner__background {
