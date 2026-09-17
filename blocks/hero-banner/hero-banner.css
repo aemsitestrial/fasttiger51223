@@ -1,12 +1,27 @@
 .herobanner {
 
+  --hero-fallback: #111318;
   --hero-white: #fff;
   --hero-muted: rgb(255 255 255 / 72%);
   --hero-subtle: rgb(255 255 255 / 52%);
 
   width: 100%;
   color: var(--hero-white);
-  background: var(--hero-emerald);
+  background: var(--hero-fallback);
+}
+
+.herobanner a {
+  color: #464feb;
+  text-decoration: none;
+}
+
+.herobanner tr th,
+.herobanner tr td {
+  border: 1px solid #e6e6e6;
+}
+
+.herobanner tr th {
+  background-color: #f5f5f5;
 }
 
 .herobanner__hero {
@@ -17,7 +32,7 @@
   width: 100%;
   height: clamp(850px, 56.25vw, 950px);
   overflow: hidden;
-  background: var(--hero-emerald);
+  background: var(--hero-fallback);
 }
 
 .herobanner__background {
@@ -25,32 +40,6 @@
   z-index: -1;
   inset: 0;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 82% 25%, rgb(13 105 94 / 42%), transparent 26%),
-    radial-gradient(circle at 71% 82%, rgb(0 31 29 / 68%), transparent 34%),
-    linear-gradient(115deg, var(--hero-emerald-deep), var(--hero-emerald) 46%, var(--hero-emerald-soft));
-}
-
-.herobanner__background::before,
-.herobanner__background::after {
-  position: absolute;
-  inset: 0;
-  content: '';
-  pointer-events: none;
-}
-
-.herobanner__background::before {
-  opacity: 0.44;
-  background:
-    radial-gradient(circle at 64% 20%, rgb(255 255 255 / 36%) 0 1px, transparent 2px),
-    radial-gradient(circle at 69% 53%, rgb(255 255 255 / 24%) 0 1px, transparent 2px),
-    radial-gradient(circle at 93% 72%, rgb(255 255 255 / 25%) 0 1px, transparent 2px),
-    linear-gradient(31deg, transparent 65%, rgb(255 255 255 / 7%) 65.1%, transparent 65.3%),
-    linear-gradient(153deg, transparent 76%, rgb(255 255 255 / 7%) 76.1%, transparent 76.3%);
-}
-
-.herobanner__background::after {
-  background: linear-gradient(90deg, rgb(0 31 29 / 96%) 0%, rgb(0 40 37 / 78%) 37%, rgb(0 58 54 / 22%) 62%, transparent 100%);
 }
 
 .herobanner__background-image,
@@ -62,8 +51,6 @@
 .herobanner__background-image {
   position: absolute;
   inset: 0;
-  opacity: 0.26;
-  mix-blend-mode: luminosity;
 }
 
 .herobanner__background-image img {
@@ -127,6 +114,7 @@
   font-weight: 300;
   line-height: 0.98;
   letter-spacing: 0;
+  text-shadow: 0 2px 12px rgb(0 0 0 / 45%);
 }
 
 .herobanner__title-line,
@@ -142,6 +130,7 @@
   font-weight: 300;
   line-height: 1.45;
   letter-spacing: 0;
+  text-shadow: 0 2px 10px rgb(0 0 0 / 45%);
 }
 
 .herobanner__cta {
@@ -218,10 +207,6 @@
     align-items: flex-start;
     min-height: 720px;
     height: auto;
-  }
-
-  .herobanner__background::after {
-    background: linear-gradient(180deg, rgb(0 31 29 / 76%), rgb(0 40 37 / 94%) 58%, var(--hero-emerald-deep));
   }
 
   .herobanner__content {
