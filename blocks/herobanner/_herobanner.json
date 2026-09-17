@@ -21,28 +21,84 @@
       "id": "herobanner",
       "fields": [
         {
-          "component": "reference",
+          "component": "text",
           "valueType": "string",
-          "name": "image",
-          "label": "Background Image",
-          "multi": false
+          "name": "label",
+          "label": "Label (pill badge)",
+          "value": "RESEARCH"
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "imageAlt",
-          "label": "Image Alt",
-          "value": ""
+          "name": "category",
+          "label": "Category",
+          "value": "AI-FIRST ENTERPRISE"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "readTime",
+          "label": "Read Time",
+          "value": "14 MIN READ"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "publishDate",
+          "label": "Publish Date",
+          "value": "Published Aug 26"
         },
         {
           "component": "richtext",
-          "name": "text",
-          "label": "Hero Content",
-          "value": "",
-          "valueType": "string"
+          "valueType": "string",
+          "name": "title",
+          "label": "Title"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "ctaText",
+          "label": "CTA Text",
+          "value": "Read Report"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "ctaLink",
+          "label": "CTA Link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "author",
+          "label": "Author Name"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "role",
+          "label": "Author Role"
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "backgroundImage",
+          "label": "Background Image",
+          "multi": false
         }
       ]
     }
   ],
-  "filters": []
+  "filters": [
+    {
+      "id": "herobanner",
+      "components": []
+    }
+  ]
 }
