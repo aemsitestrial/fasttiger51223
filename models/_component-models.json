@@ -18,6 +18,9 @@
     "...": "../blocks/*/_*.json#/models"
   },
   {
+    "...": "../blocks/herobanner/herobanner.json#/models"
+  },
+  {
     "...": "./_templates.json#/models"
   }
 ]
