@@ -29,7 +29,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  height: clamp(850px, 56.25vw, 950px);
+  height: clamp(550px, 56.25vw, 650px);
   overflow: hidden;
   background: var(--hero-fallback);
 }
@@ -45,7 +45,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgb(0 0 0 / 45%);
+  background: rgba(247, 243, 243, 0.45);
 }
 
 .herobanner__background-image,
@@ -86,7 +86,7 @@
   padding: 7px 12px;
   border: 1px solid rgb(255 255 255 / 30%);
   border-radius: 2px;
-  background: rgb(255 255 255 / 8%);
+  background: rgba(4, 0, 255, 0.08)
 }
 
 .herobanner__label,
