@@ -144,6 +144,7 @@ function createBackground(fields) {
 }
 
 export default function decorate(block) {
+  block.classList.add('herobanner');
   const fields = getFields(block);
   const hero = document.createElement('section');
   hero.className = 'herobanner__hero';
