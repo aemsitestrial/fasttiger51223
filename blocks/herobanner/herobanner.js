@@ -1,178 +1,158 @@
-function getRowText(row) {
-  if (!row) return '';
-  return row.textContent.trim();
+const DEFAULTS = {
+  label: 'RESEARCH',
+  category: 'AI-FIRST ENTERPRISE',
+  readTime: '14 MIN READ',
+  publishDate: 'Published Aug 26',
+  title: 'The Enterprise\nIntelligence\nOutlook',
+  subtitle: 'Enabling Banking Innovation and\nCyber Resilience',
+  ctaText: 'Read Report',
+  author: 'Dr. Aris Thorne',
+  role: 'CHIEF AI STRATEGIST',
+};
+
+function normalizeFieldName(value) {
+  return value.toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
-function getRowLink(row) {
-  if (!row) return null;
-  const a = row.querySelector('a');
-  if (a) return a.getAttribute('href');
-  const text = getRowText(row);
-  return text || null;
+function getFields(block) {
+  return [...block.children].reduce((fields, row) => {
+    const [nameCell, valueCell] = row.children;
+    if (nameCell && valueCell) {
+      fields[normalizeFieldName(nameCell.textContent)] = valueCell;
+    }
+    return fields;
+  }, {});
 }
 
-function getRowImage(row) {
-  if (!row) return null;
-  return row.querySelector('img');
+function getText(fields, name, fallback = '') {
+  return fields[normalizeFieldName(name)]?.textContent.trim() || fallback;
 }
 
-function getRowRichText(row) {
-  if (!row) return '';
-  return row.innerHTML.trim();
+function getLines(fields, name, fallback) {
+  const cell = fields[normalizeFieldName(name)];
+  if (!cell) return fallback.split('\n');
+
+  const copy = cell.cloneNode(true);
+  copy.querySelectorAll('br').forEach((breakElement) => breakElement.replaceWith('\n'));
+  const elements = [...copy.children];
+  const value = elements.length > 1
+    ? elements.map((element) => element.textContent.trim()).filter(Boolean).join('\n')
+    : copy.textContent.trim();
+
+  return (value || fallback).split(/\n+/).map((line) => line.trim()).filter(Boolean);
+}
+
+function createTextElement(tagName, className, text) {
+  const element = document.createElement(tagName);
+  element.className = className;
+  element.textContent = text;
+  return element;
+}
+
+function createMeta(fields) {
+  const meta = document.createElement('div');
+  meta.className = 'herobanner__meta';
+  meta.setAttribute('aria-label', 'Report metadata');
+
+  const label = getText(fields, 'label', DEFAULTS.label);
+  const category = getText(fields, 'category', DEFAULTS.category);
+  const readTime = getText(fields, 'readTime', DEFAULTS.readTime);
+
+  if (label) meta.append(createTextElement('span', 'herobanner__label', label));
+  if (category) meta.append(createTextElement('span', 'herobanner__category', category));
+  if (readTime) meta.append(createTextElement('span', 'herobanner__read-time', readTime));
+
+  return meta;
+}
+
+function createHeading(fields) {
+  const heading = document.createElement('h1');
+  heading.className = 'herobanner__title';
+
+  getLines(fields, 'title', DEFAULTS.title).forEach((line) => {
+    heading.append(createTextElement('span', 'herobanner__title-line', line));
+  });
+
+  return heading;
+}
+
+function createSubtitle(fields) {
+  const subtitle = document.createElement('p');
+  subtitle.className = 'herobanner__subtitle';
+
+  getLines(fields, 'subtitle', DEFAULTS.subtitle).forEach((line) => {
+    subtitle.append(createTextElement('span', 'herobanner__subtitle-line', line));
+  });
+
+  return subtitle;
+}
+
+function createCallToAction(fields) {
+  const text = getText(fields, 'ctaText', DEFAULTS.ctaText);
+  const linkCell = fields[normalizeFieldName('ctaLink')];
+  const authoredLink = linkCell?.querySelector('a');
+  const href = authoredLink?.getAttribute('href') || linkCell?.textContent.trim();
+  if (!text || !href) return null;
+
+  const link = document.createElement('a');
+  link.className = 'herobanner__cta';
+  link.href = href;
+  link.append(
+    createTextElement('span', 'herobanner__cta-text', text),
+    createTextElement('span', 'herobanner__cta-arrow', '→'),
+  );
+  link.querySelector('.herobanner__cta-arrow').setAttribute('aria-hidden', 'true');
+  return link;
+}
+
+function createAuthor(fields) {
+  const name = getText(fields, 'author', DEFAULTS.author);
+  const role = getText(fields, 'role', DEFAULTS.role);
+  if (!name && !role) return null;
+
+  const author = document.createElement('footer');
+  author.className = 'herobanner__author';
+  if (name) author.append(createTextElement('p', 'herobanner__author-name', name));
+  if (role) author.append(createTextElement('p', 'herobanner__author-role', role));
+  return author;
+}
+
+function createBackground(fields) {
+  const background = document.createElement('div');
+  background.className = 'herobanner__background';
+  background.setAttribute('aria-hidden', 'true');
+
+  const image = fields[normalizeFieldName('backgroundImage')]?.querySelector('picture, img');
+  if (image) {
+    const media = image.closest('picture') || image;
+    media.classList.add('herobanner__background-image');
+    media.querySelector?.('img')?.setAttribute('alt', '');
+    background.append(media);
+  }
+
+  return background;
 }
 
 export default function decorate(block) {
-  const rows = [...block.children];
-
-  const [
-    labelRow,
-    categoryRow,
-    readTimeRow,
-    publishDateRow,
-    titleRow,
-    subtitleRow,
-    ctaTextRow,
-    ctaLinkRow,
-    authorRow,
-    roleRow,
-    backgroundImageRow,
-  ] = rows;
-
-  const label = getRowText(labelRow) || 'RESEARCH';
-  const category = getRowText(categoryRow);
-  const readTime = getRowText(readTimeRow);
-  const publishDate = getRowText(publishDateRow);
-  const titleHTML = getRowRichText(titleRow);
-  const subtitle = getRowText(subtitleRow);
-  const ctaText = getRowText(ctaTextRow) || 'Read Report';
-  const ctaHref = getRowLink(ctaLinkRow) || getRowLink(ctaTextRow) || '#';
-  const author = getRowText(authorRow);
-  const role = getRowText(roleRow);
-  const bgImg = getRowImage(backgroundImageRow);
-
-  const section = document.createElement('div');
-  section.className = 'enterprise-hero-inner';
-
-  const bgLayer = document.createElement('div');
-  bgLayer.className = 'enterprise-hero-background';
-
-  if (bgImg) {
-    const picture = bgImg.closest('picture');
-    if (picture) {
-      picture.classList.add('enterprise-hero-bg-image');
-      bgLayer.append(picture);
-    }
-  }
-
-  const bgPattern = document.createElement('div');
-  bgPattern.className = 'enterprise-hero-pattern';
-  bgPattern.setAttribute('aria-hidden', 'true');
-  bgLayer.append(bgPattern);
-
-  const bgGradient = document.createElement('div');
-  bgGradient.className = 'enterprise-hero-gradient';
-  bgGradient.setAttribute('aria-hidden', 'true');
-  bgLayer.append(bgGradient);
+  const fields = getFields(block);
+  const hero = document.createElement('section');
+  hero.className = 'herobanner__hero';
+  hero.setAttribute('aria-label', 'Research report');
 
   const content = document.createElement('div');
-  content.className = 'enterprise-hero-content';
+  content.className = 'herobanner__content';
+  content.append(
+    createMeta(fields),
+    createTextElement('p', 'herobanner__publication', getText(fields, 'publishDate', DEFAULTS.publishDate)),
+    createHeading(fields),
+    createSubtitle(fields),
+  );
 
-  const meta = document.createElement('div');
-  meta.className = 'enterprise-hero-meta';
+  const cta = createCallToAction(fields);
+  const author = createAuthor(fields);
+  if (cta) content.append(cta);
+  if (author) content.append(author);
 
-  if (label) {
-    const pill = document.createElement('span');
-    pill.className = 'enterprise-hero-pill';
-    pill.textContent = label;
-    meta.append(pill);
-  }
-
-  if (category) {
-    const cat = document.createElement('span');
-    cat.className = 'enterprise-hero-category';
-    cat.textContent = category;
-    meta.append(cat);
-  }
-
-  if (readTime) {
-    const rt = document.createElement('span');
-    rt.className = 'enterprise-hero-readtime';
-    rt.textContent = readTime;
-    meta.append(rt);
-  }
-
-  content.append(meta);
-
-  if (publishDate) {
-    const pub = document.createElement('p');
-    pub.className = 'enterprise-hero-publish';
-    pub.textContent = publishDate;
-    content.append(pub);
-  }
-
-  const heading = document.createElement('h1');
-  heading.className = 'enterprise-hero-title';
-  heading.innerHTML = titleHTML;
-  content.append(heading);
-
-  if (subtitle) {
-    const sub = document.createElement('p');
-    sub.className = 'enterprise-hero-subtitle';
-    sub.textContent = subtitle;
-    content.append(sub);
-  }
-
-  if (ctaText) {
-    const cta = document.createElement('a');
-    cta.className = 'enterprise-hero-cta';
-    cta.href = ctaHref;
-    cta.setAttribute('aria-label', ctaText);
-
-    const ctaLabel = document.createElement('span');
-    ctaLabel.className = 'enterprise-hero-cta-label';
-    ctaLabel.textContent = ctaText;
-
-    const ctaArrow = document.createElement('span');
-    ctaArrow.className = 'enterprise-hero-cta-arrow';
-    ctaArrow.setAttribute('aria-hidden', 'true');
-    ctaArrow.textContent = '→';
-
-    cta.append(ctaLabel, ctaArrow);
-    content.append(cta);
-  }
-
-  if (author || role) {
-    const authorWrap = document.createElement('div');
-    authorWrap.className = 'enterprise-hero-author';
-
-    const divider = document.createElement('span');
-    divider.className = 'enterprise-hero-author-divider';
-    divider.setAttribute('aria-hidden', 'true');
-    authorWrap.append(divider);
-
-    const authorInfo = document.createElement('div');
-    authorInfo.className = 'enterprise-hero-author-info';
-
-    if (author) {
-      const name = document.createElement('p');
-      name.className = 'enterprise-hero-author-name';
-      name.textContent = author;
-      authorInfo.append(name);
-    }
-
-    if (role) {
-      const roleEl = document.createElement('p');
-      roleEl.className = 'enterprise-hero-author-role';
-      roleEl.textContent = role;
-      authorInfo.append(roleEl);
-    }
-
-    authorWrap.append(authorInfo);
-    content.append(authorWrap);
-  }
-
-  section.append(bgLayer, content);
-
-  block.textContent = '';
-  block.append(section);
+  hero.append(createBackground(fields), content);
+  block.replaceChildren(hero);
 }

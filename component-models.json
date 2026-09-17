@@ -392,32 +392,6 @@
     ]
   },
   {
-    "id": "herobanner",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Alt",
-        "value": ""
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
     "id": "hero",
     "fields": [
       {
@@ -474,6 +448,87 @@
         "label": "Record ID",
         "description": "Record ID",
         "required": true
+      }
+    ]
+  },
+  {
+    "id": "herobanner",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "label",
+        "label": "Label",
+        "value": "RESEARCH"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "category",
+        "label": "Category",
+        "value": "AI-FIRST ENTERPRISE"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "read-time",
+        "label": "Read Time",
+        "value": "14 MIN READ"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "publish-date",
+        "label": "Publish Date",
+        "value": "Published Aug 26"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title",
+        "value": "The Enterprise<br>Intelligence<br>Outlook"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "subtitle",
+        "label": "Subtitle",
+        "value": "Enabling Banking Innovation and<br>Cyber Resilience"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "cta-text",
+        "label": "CTA Text",
+        "value": "Read Report"
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "cta-link",
+        "label": "CTA Link"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "author",
+        "label": "Author",
+        "value": "Dr. Aris Thorne"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "role",
+        "label": "Role",
+        "value": "CHIEF AI STRATEGIST"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "background-image",
+        "label": "Background Image",
+        "multi": false
       }
     ]
   },
