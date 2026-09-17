@@ -122,11 +122,21 @@ function createBackground(fields) {
   background.className = 'herobanner__background';
   background.setAttribute('aria-hidden', 'true');
 
-  const image = fields[normalizeFieldName('backgroundImage')]?.querySelector('picture, img');
-  if (image) {
-    const media = image.closest('picture') || image;
+  const cell = fields[normalizeFieldName('backgroundImage')];
+  const existing = cell?.querySelector('picture, img');
+  // "reference" fields author as a picture/img when optimized, otherwise as a plain link/URL.
+  const src = existing ? null : (cell?.querySelector('a')?.getAttribute('href') || cell?.textContent.trim());
+
+  let media = existing ? (existing.closest('picture') || existing) : null;
+  if (!media && src) {
+    media = document.createElement('img');
+    media.src = src;
+    media.loading = 'lazy';
+  }
+
+  if (media) {
     media.classList.add('herobanner__background-image');
-    media.querySelector?.('img')?.setAttribute('alt', '');
+    (media.matches('img') ? media : media.querySelector('img'))?.setAttribute('alt', '');
     background.append(media);
   }
 
