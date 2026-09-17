@@ -1,14 +1,4 @@
-const DEFAULTS = {
-  label: 'RESEARCH',
-  category: 'AI-FIRST ENTERPRISE',
-  readTime: '14 MIN READ',
-  publishDate: 'Published Aug 26',
-  title: 'The Enterprise\nIntelligence\nOutlook',
-  subtitle: 'Enabling Banking Innovation and\nCyber Resilience',
-  ctaText: 'Read Report',
-  author: 'Dr. Aris Thorne',
-  role: 'CHIEF AI STRATEGIST',
-};
+const DEFAULTS = {};
 
 function normalizeFieldName(value) {
   return value.toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -54,9 +44,9 @@ function createMeta(fields) {
   meta.className = 'herobanner__meta';
   meta.setAttribute('aria-label', 'Report metadata');
 
-  const label = getText(fields, 'label', DEFAULTS.label);
-  const category = getText(fields, 'category', DEFAULTS.category);
-  const readTime = getText(fields, 'readTime', DEFAULTS.readTime);
+  const label = getText(fields, 'label');
+  const category = getText(fields, 'category');
+  const readTime = getText(fields, 'readTime');
 
   if (label) meta.append(createTextElement('span', 'herobanner__label', label));
   if (category) meta.append(createTextElement('span', 'herobanner__category', category));
@@ -69,7 +59,7 @@ function createHeading(fields) {
   const heading = document.createElement('h1');
   heading.className = 'herobanner__title';
 
-  getLines(fields, 'title', DEFAULTS.title).forEach((line) => {
+  getLines(fields, 'title', '').forEach((line) => {
     heading.append(createTextElement('span', 'herobanner__title-line', line));
   });
 
@@ -80,7 +70,7 @@ function createSubtitle(fields) {
   const subtitle = document.createElement('p');
   subtitle.className = 'herobanner__subtitle';
 
-  getLines(fields, 'subtitle', DEFAULTS.subtitle).forEach((line) => {
+  getLines(fields, 'subtitle', '').forEach((line) => {
     subtitle.append(createTextElement('span', 'herobanner__subtitle-line', line));
   });
 
@@ -88,7 +78,7 @@ function createSubtitle(fields) {
 }
 
 function createCallToAction(fields) {
-  const text = getText(fields, 'ctaText', DEFAULTS.ctaText);
+  const text = getText(fields, 'ctaText');
   const linkCell = fields[normalizeFieldName('ctaLink')];
   const authoredLink = linkCell?.querySelector('a');
   const href = authoredLink?.getAttribute('href') || linkCell?.textContent.trim();
@@ -106,8 +96,8 @@ function createCallToAction(fields) {
 }
 
 function createAuthor(fields) {
-  const name = getText(fields, 'author', DEFAULTS.author);
-  const role = getText(fields, 'role', DEFAULTS.role);
+  const name = getText(fields, 'author');
+  const role = getText(fields, 'role');
   if (!name && !role) return null;
 
   const author = document.createElement('footer');
@@ -154,7 +144,7 @@ export default function decorate(block) {
   content.className = 'herobanner__content';
   content.append(
     createMeta(fields),
-    createTextElement('p', 'herobanner__publication', getText(fields, 'publishDate', DEFAULTS.publishDate)),
+    createTextElement('p', 'herobanner__publication', getText(fields, 'publishDate')),
     createHeading(fields),
     createSubtitle(fields),
   );

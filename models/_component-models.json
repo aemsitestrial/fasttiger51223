@@ -18,7 +18,7 @@
     "...": "../blocks/*/_*.json#/models"
   },
   {
-    "...": "../blocks/herobanner/herobanner.json#/models"
+    "...": "../blocks/hero-banner/hero-banner.json#/models"
   },
   {
     "...": "./_templates.json#/models"

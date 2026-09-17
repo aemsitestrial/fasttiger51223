@@ -44,7 +44,7 @@
           "...": "../blocks/hero/_*.json#/definitions"
         },
         {
-          "...": "../blocks/herobanner/herobanner.json#/definitions"
+          "...": "../blocks/hero-banner/hero-banner.json#/definitions"
         },
         {
           "...": "../blocks/content-fragment/_*.json#/definitions"
