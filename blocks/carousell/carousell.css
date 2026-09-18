@@ -1,0 +1,160 @@
+.carousell-container {
+  width: 100%;
+}
+
+.carousell-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.carousell-title {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.carousell-view-all {
+  color: #0057ff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.carousell-view-all:hover {
+  text-decoration: underline;
+}
+
+.carousell {
+  position: relative;
+}
+
+.carousell-viewport {
+  overflow: hidden;
+}
+
+.carousell-track {
+  display: flex;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.carousell-slide {
+  flex: 0 0 100%;
+  padding: 0.75rem;
+  box-sizing: border-box;
+}
+
+.carousell-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid rgb(0 0 0 / 10%);
+  border-radius: 16px;
+  background: #fff;
+  overflow: hidden;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.carousell-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgb(0 0 0 / 12%);
+}
+
+.carousell-media picture,
+.carousell-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.carousell-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem 1rem 0;
+}
+
+.carousell-tag,
+.carousell-category,
+.carousell-read-time {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgb(0 0 0 / 70%);
+  text-transform: uppercase;
+}
+
+.carousell-card-title {
+  margin: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+.carousell-description {
+  margin: 0 1rem 1rem;
+  color: rgb(0 0 0 / 72%);
+  line-height: 1.6;
+}
+
+.carousell-link {
+  margin: auto 1rem 1rem;
+  font-weight: 600;
+  color: #0057ff;
+  text-decoration: none;
+}
+
+.carousell-link:hover {
+  text-decoration: underline;
+}
+
+.carousell-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.carousell-prev,
+.carousell-next {
+  padding: 0.75rem 1rem;
+  border: 1px solid rgb(0 0 0 / 10%);
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.carousell-prev:hover,
+.carousell-next:hover {
+  background: rgb(0 87 255 / 8%);
+}
+
+.carousell-prev:focus-visible,
+.carousell-next:focus-visible,
+.carousell-link:focus-visible,
+.carousell-view-all:focus-visible {
+  outline: 2px solid #0057ff;
+  outline-offset: 3px;
+}
+
+.carousell-prev:disabled,
+.carousell-next:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (width >= 768px) {
+  .carousell-slide {
+    flex: 0 0 50%;
+  }
+}
+
+@media (width >= 1200px) {
+  .carousell-slide {
+    flex: 0 0 33.3333%;
+  }
+}
