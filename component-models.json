@@ -524,72 +524,68 @@
     ]
   },
   {
-    "models": [
+    "id": "carousell",
+    "fields": [
       {
-        "id": "carousell",
+        "component": "text",
+        "name": "section-title",
+        "label": "Section Title"
+      },
+      {
+        "component": "text",
+        "name": "view-all-text",
+        "label": "View All Text"
+      },
+      {
+        "component": "text",
+        "name": "view-all-link",
+        "label": "View All Link"
+      },
+      {
+        "component": "container",
+        "name": "items",
+        "label": "Carousel Items",
+        "multi": true,
         "fields": [
           {
-            "component": "text",
-            "name": "section-title",
-            "label": "Section Title"
+            "component": "reference",
+            "name": "image",
+            "label": "Image"
           },
           {
             "component": "text",
-            "name": "view-all-text",
-            "label": "View All Text"
+            "name": "tag",
+            "label": "Tag"
           },
           {
             "component": "text",
-            "name": "view-all-link",
-            "label": "View All Link"
+            "name": "category",
+            "label": "Category"
           },
           {
-            "component": "container",
-            "name": "items",
-            "label": "Carousel Items",
-            "multi": true,
-            "fields": [
-              {
-                "component": "reference",
-                "name": "image",
-                "label": "Image"
-              },
-              {
-                "component": "text",
-                "name": "tag",
-                "label": "Tag"
-              },
-              {
-                "component": "text",
-                "name": "category",
-                "label": "Category"
-              },
-              {
-                "component": "text",
-                "name": "read-time",
-                "label": "Read Time"
-              },
-              {
-                "component": "text",
-                "name": "title",
-                "label": "Title"
-              },
-              {
-                "component": "textarea",
-                "name": "description",
-                "label": "Description"
-              },
-              {
-                "component": "text",
-                "name": "button-text",
-                "label": "Button Text"
-              },
-              {
-                "component": "text",
-                "name": "button-link",
-                "label": "Button Link"
-              }
-            ]
+            "component": "text",
+            "name": "read-time",
+            "label": "Read Time"
+          },
+          {
+            "component": "text",
+            "name": "title",
+            "label": "Title"
+          },
+          {
+            "component": "textarea",
+            "name": "description",
+            "label": "Description"
+          },
+          {
+            "component": "text",
+            "name": "button-text",
+            "label": "Button Text"
+          },
+          {
+            "component": "text",
+            "name": "button-link",
+            "label": "Button Link"
           }
         ]
       }
