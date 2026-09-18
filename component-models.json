@@ -452,7 +452,7 @@
     ]
   },
   {
-    "id": "herobanner",
+    "id": "hero-banner",
     "fields": [
       {
         "component": "text",
