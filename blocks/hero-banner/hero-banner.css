@@ -170,6 +170,7 @@
 .herobanner__author {
   margin-top: auto;
   padding-top: 72px;
+  background: transparent;
 }
 
 .herobanner__author-name,
