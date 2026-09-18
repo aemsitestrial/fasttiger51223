@@ -2,7 +2,7 @@
   --hero-fallback: #111318;
   --hero-white: #fff;
   --hero-muted: rgb(255 255 255 / 72%);
-  --hero-subtle: rgb(255 255 255 / 52%);
+  --hero-subtle: rgba(13, 6, 6, 0.52);
 
   width: 100%;
   color: var(--hero-white);
