@@ -29,7 +29,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  height: clamp(550px, 56.25vw, 650px);
+  height: clamp(400px, 45vw, 550px);
   overflow: hidden;
   background: var(--hero-fallback);
 }
