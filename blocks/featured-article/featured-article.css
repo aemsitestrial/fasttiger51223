@@ -74,7 +74,7 @@
   transform: translateX(4px);
 }
 
-@media (width <= 991px) {
+@media (width : 991px) {
   .featured-article__media picture,
   .featured-article__media img {
     height: 340px;
@@ -90,7 +90,7 @@
   }
 }
 
-@media (width <= 767px) {
+@media (width : 767px) {
   .featured-article__media picture,
   .featured-article__media img {
     height: 280px;
