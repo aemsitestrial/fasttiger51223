@@ -25,7 +25,8 @@
       "hero-banner",
       "product-teaser",
       "product-recommendations",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -42,7 +43,8 @@
       "hero-banner",
       "product-teaser",
       "product-recommendations",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -61,7 +63,8 @@
       "product-teaser",
       "product-recommendations",
       "product-list-page",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -80,7 +83,8 @@
       "product-details",
       "product-teaser",
       "product-recommendations",
-      "section-header"
+      "section-header",
+"featured-article"
     ]
   },
   {
@@ -96,7 +100,8 @@
       "fragment",
       "hero-banner",
       "commerce-mini-cart",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -114,7 +119,8 @@
       "commerce-cart",
       "product-teaser",
       "product-recommendations",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -139,7 +145,8 @@
       "commerce-order-returns",
       "product-teaser",
       "product-recommendations",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -155,7 +162,8 @@
       "fragment",
       "hero-banner",
       "commerce-checkout",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -171,7 +179,8 @@
       "fragment",
       "hero-banner",
       "commerce-search-order",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -187,7 +196,8 @@
       "fragment",
       "hero-banner",
       "product-list-page",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -203,7 +213,8 @@
       "fragment",
       "hero-banner",
       "commerce-login",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -219,7 +230,8 @@
       "fragment",
       "hero-banner",
       "commerce-forgot-password",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -235,8 +247,8 @@
       "fragment",
       "hero-banner",
       "commerce-create-account",
-      "section-header"
-
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -251,6 +263,7 @@
       "columns",
       "fragment",
       "section-header",
+      "featured-article",
       "hero-banner",
       "commerce-account-sidebar",
       "commerce-account-header",
@@ -274,7 +287,8 @@
       "hero-banner",
       "commerce-account-sidebar",
       "commerce-orders-list",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -291,7 +305,8 @@
       "hero-banner",
       "commerce-account-sidebar",
       "commerce-addresses",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -308,7 +323,8 @@
       "hero-banner",
       "commerce-account-sidebar",
       "commerce-returns-list",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -331,7 +347,8 @@
       "commerce-order-cost-summary",
       "commerce-order-product-list",
       "commerce-order-returns",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -347,7 +364,8 @@
       "fragment",
       "hero-banner",
       "commerce-search-order",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -367,7 +385,8 @@
       "commerce-shipping-status",
       "commerce-customer-details",
       "commerce-order-product-list",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -383,7 +402,8 @@
       "fragment",
       "hero-banner",
       "commerce-create-return",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -399,7 +419,8 @@
       "fragment",
       "hero-banner",
       "commerce-confirm-account",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -415,7 +436,8 @@
       "fragment",
       "hero-banner",
       "commerce-create-password",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {
@@ -431,7 +453,8 @@
       "fragment",
       "hero-banner",
       "commerce-wishlist",
-      "section-header"
+      "section-header",
+      "featured-article"
     ]
   },
   {

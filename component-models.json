@@ -891,5 +891,36 @@
         "label": "View All Link"
       }
     ]
+  },
+  {
+    "id": "featured-article",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Background Image"
+      },
+      {
+        "component": "text",
+        "name": "eyebrow",
+        "label": "Eyebrow"
+      },
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "text",
+        "name": "ctaLabel",
+        "label": "CTA Label"
+      },
+      {
+        "component": "text",
+        "name": "ctaLink",
+        "label": "CTA Link"
+      }
+    ]
   }
 ]
