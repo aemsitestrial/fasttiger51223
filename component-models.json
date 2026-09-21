@@ -524,74 +524,6 @@
     ]
   },
   {
-    "id": "carousell",
-    "fields": [
-      {
-        "component": "text",
-        "name": "section-title",
-        "label": "Section Title"
-      },
-      {
-        "component": "text",
-        "name": "view-all-text",
-        "label": "View All Text"
-      },
-      {
-        "component": "text",
-        "name": "view-all-link",
-        "label": "View All Link"
-      },
-      {
-        "component": "container",
-        "name": "items",
-        "label": "Carousel Items",
-        "multi": true,
-        "fields": [
-          {
-            "component": "reference",
-            "name": "image",
-            "label": "Image"
-          },
-          {
-            "component": "text",
-            "name": "tag",
-            "label": "Tag"
-          },
-          {
-            "component": "text",
-            "name": "category",
-            "label": "Category"
-          },
-          {
-            "component": "text",
-            "name": "read-time",
-            "label": "Read Time"
-          },
-          {
-            "component": "text",
-            "name": "title",
-            "label": "Title"
-          },
-          {
-            "component": "textarea",
-            "name": "description",
-            "label": "Description"
-          },
-          {
-            "component": "text",
-            "name": "button-text",
-            "label": "Button Text"
-          },
-          {
-            "component": "text",
-            "name": "button-link",
-            "label": "Button Link"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "page-metadata",
     "fields": [
       {
@@ -935,6 +867,26 @@
         "valueType": "string",
         "value": "wishlist",
         "readOnly": true
+      }
+    ]
+  },
+  {
+    "id": "section-header",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "text",
+        "name": "viewAllLabel",
+        "label": "View All Label"
+      },
+      {
+        "component": "text",
+        "name": "viewAllLink",
+        "label": "View All Link"
       }
     ]
   }

@@ -147,7 +147,6 @@
       "columns",
       "fragment",
       "hero-banner",
-      "carousell",
       "commerce-checkout"
     ]
   },
@@ -429,6 +428,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "content",
+    "components": [
+      "section-header"
     ]
   }
 ]
