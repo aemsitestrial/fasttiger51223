@@ -880,11 +880,13 @@
       },
       {
         "component": "text",
+        "valueType": "string",
         "name": "viewAllLabel",
         "label": "View All Label"
       },
       {
         "component": "text",
+        "valueType": "string",
         "name": "viewAllLink",
         "label": "View All Link"
       }
