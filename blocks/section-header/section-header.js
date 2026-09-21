@@ -1,36 +1,39 @@
 export default function decorate(block) {
-  const rows = [...block.children];
+  const data = {};
 
-  if (!rows.length) {
-    return;
-  }
+  [...block.children].forEach((row) => {
+    const cols = row.querySelectorAll(':scope > div');
 
-  const titleRow = rows[0];
-  const linkRow = rows[1];
-
-  const title = titleRow?.textContent?.trim() || '';
-
-  const authoredLink = linkRow?.querySelector('a');
+    if (cols.length >= 2) {
+      const key = cols[0].textContent.trim();
+      const value = cols[1].textContent.trim();
+      data[key] = value;
+    }
+  });
 
   const wrapper = document.createElement('div');
   wrapper.className = 'section-header__wrapper';
 
   const heading = document.createElement('h2');
   heading.className = 'section-header__title';
-  heading.textContent = title;
+  heading.textContent = data.title || '';
 
   wrapper.append(heading);
 
-  if (authoredLink) {
-    authoredLink.classList.add('section-header__link');
+  if (data.viewAllLabel && data.viewAllLink) {
+    const link = document.createElement('a');
+    link.className = 'section-header__link';
+    link.href = data.viewAllLink;
+    link.textContent = data.viewAllLabel;
 
     const arrow = document.createElement('span');
     arrow.className = 'section-header__arrow';
     arrow.setAttribute('aria-hidden', 'true');
     arrow.textContent = '→';
 
-    authoredLink.append(' ', arrow);
-    wrapper.append(authoredLink);
+    link.append(' ', arrow);
+
+    wrapper.append(link);
   }
 
   block.replaceChildren(wrapper);
